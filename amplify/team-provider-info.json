@@ -1,0 +1,21 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cadvizortestlibrary-dev-232305-authRole",
+      "UnauthRoleArn": "arn:aws:iam::104065691054:role/amplify-cadvizortestlibrary-dev-232305-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::104065691054:role/amplify-cadvizortestlibrary-dev-232305-authRole",
+      "Region": "ap-northeast-2",
+      "DeploymentBucketName": "amplify-cadvizortestlibrary-dev-232305-deployment",
+      "UnauthRoleName": "amplify-cadvizortestlibrary-dev-232305-unauthRole",
+      "StackName": "amplify-cadvizortestlibrary-dev-232305",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:104065691054:stack/amplify-cadvizortestlibrary-dev-232305/452969d0-23b8-11ed-be8f-0a83c8ea97c8",
+      "AmplifyAppId": "d3mj4e7tl69sfq"
+    },
+    "categories": {
+      "auth": {
+        "cadvizortestlibrary76a38575": {},
+        "true": {}
+      }
+    }
+  }
+}
