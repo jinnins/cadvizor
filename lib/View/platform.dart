@@ -3,6 +3,8 @@ import 'package:cadvizortestlibrary/View/qrcode_scanner.dart';
 import 'package:cadvizortestlibrary/View/sub_design_list.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:web_socket_channel/io.dart';
+import '../WebSocket/test.dart';
 import 'checkout.dart';
 import '../home.dart';
 
@@ -39,6 +41,15 @@ class _PlatformMainWidgetState extends State<PlatformMainWidget> {
         centerTitle: true,
         title: Text(""),
         backgroundColor: Colors.transparent,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(_createChattingRoute());
+            },
+            icon: Icon(Icons.chat),
+          ),
+        ],
         elevation: 0.0,
       ),
       extendBodyBehindAppBar: true,
@@ -50,10 +61,10 @@ class _PlatformMainWidgetState extends State<PlatformMainWidget> {
           height: MediaQuery.of(context).size.height * 1,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/loginback_white.png'),
-              fit: BoxFit.fitHeight,
-              colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.1), BlendMode.softLight)
-            ),
+                image: AssetImage('assets/images/loginback_white.png'),
+                fit: BoxFit.fitHeight,
+                colorFilter: ColorFilter.mode(
+                    Colors.white.withOpacity(0.1), BlendMode.softLight)),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -71,7 +82,8 @@ class _PlatformMainWidgetState extends State<PlatformMainWidget> {
                       child: Stack(
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 30),
                             child: PageView(
                               controller: pageViewController,
                               scrollDirection: Axis.horizontal,
@@ -86,11 +98,13 @@ class _PlatformMainWidgetState extends State<PlatformMainWidget> {
                                     children: [
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Padding(
-                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                0, 0, 0, 20),
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 0, 0, 20),
                                             child: Image.asset(
                                               'assets/images/librarary.png',
                                               width: 350,
@@ -155,11 +169,13 @@ class _PlatformMainWidgetState extends State<PlatformMainWidget> {
                                     children: [
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Padding(
-                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                0, 0, 0, 20),
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 0, 0, 20),
                                             child: Image.asset(
                                               'assets/images/bom.png',
                                               width: 300,
@@ -224,11 +240,13 @@ class _PlatformMainWidgetState extends State<PlatformMainWidget> {
                                     children: [
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Padding(
-                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                0, 30, 0, 30),
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 30, 0, 30),
                                             child: Image.asset(
                                               'assets/images/blueprint.png',
                                               width: 300,
@@ -293,11 +311,13 @@ class _PlatformMainWidgetState extends State<PlatformMainWidget> {
                                     children: [
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                         children: [
                                           Padding(
-                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                0, 0, 0, 20),
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0, 0, 0, 20),
                                             child: Image.asset(
                                               'assets/images/sub3.png',
                                               width: 350,
@@ -358,7 +378,8 @@ class _PlatformMainWidgetState extends State<PlatformMainWidget> {
                           Align(
                             alignment: AlignmentDirectional(0, 1),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
                               child: SmoothPageIndicator(
                                 controller: pageViewController,
                                 count: 4,
@@ -399,29 +420,37 @@ class _PlatformMainWidgetState extends State<PlatformMainWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
                       child: ElevatedButton(
                           onPressed: () {
-                            if(currentIndex == 0){
+                            if (currentIndex == 0) {
                               Navigator.of(context).push(_createHomeRoute());
-                            }
-                            else if(currentIndex == 1){
-                              Navigator.of(context).push(_createQRcodeScannerRoute());
-                            }
-                            else if(currentIndex == 2){
-                              Navigator.of(context).push(_createSubDesignListRoute());
-                            }
-                            else if(currentIndex == 3){
-                              Navigator.of(context).push(_createCheckOutRoute());
+                            } else if (currentIndex == 1) {
+                              Navigator.of(context)
+                                  .push(_createQRcodeScannerRoute());
+                            } else if (currentIndex == 2) {
+                              Navigator.of(context)
+                                  .push(_createSubDesignListRoute());
+                            } else if (currentIndex == 3) {
+                              Navigator.of(context)
+                                  .push(_createCheckOutRoute());
                             }
                           },
                           child: Text(
-                              currentIndex == 3 ? 'Purchase' : (currentIndex == 2 ? 'Developing' : 'Continue'),
+                              currentIndex == 3
+                                  ? 'Purchase'
+                                  : (currentIndex == 2
+                                      ? 'Developing'
+                                      : 'Continue'),
                               style: TextStyle(
                                 fontFamily: 'Lexend Deca',
-                                color: currentIndex == 3 ? Color(0xAA0F1113) : Colors.white,
+                                color: currentIndex == 3
+                                    ? Color(0xAA0F1113)
+                                    : Colors.white,
                                 fontSize: 18,
                                 fontWeight: FontWeight.w500,
                               )),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: currentIndex == 3 ? Color(0xDDD2E3FF) : Color(0xFFFE2E3C),
+                            backgroundColor: currentIndex == 3
+                                ? Color(0xDDD2E3FF)
+                                : Color(0xFFFE2E3C),
                             foregroundColor: Colors.white,
                             elevation: 2,
                             fixedSize: Size(200, 50),
@@ -476,7 +505,8 @@ Route _createCheckOutRoute() {
 
 Route _createSubDesignListRoute() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => SubDesignListWidget(),
+    pageBuilder: (context, animation, secondaryAnimation) =>
+        SubDesignListWidget(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       var begin = Offset(1.0, 1.0);
       var end = Offset.zero;
@@ -494,7 +524,27 @@ Route _createSubDesignListRoute() {
 
 Route _createQRcodeScannerRoute() {
   return PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) => QRcodeScannerWiget(title: 'QR Home'),
+    pageBuilder: (context, animation, secondaryAnimation) =>
+        QRcodeScannerWiget(title: 'QR Home'),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      var begin = Offset(1.0, 1.0);
+      var end = Offset.zero;
+      var curve = Curves.ease;
+
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    },
+  );
+}
+
+Route _createChattingRoute() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) =>
+        WebSocketTest(channel: IOWebSocketChannel.connect('ws://echo.websocket.org'), key: null,),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       var begin = Offset(1.0, 1.0);
       var end = Offset.zero;

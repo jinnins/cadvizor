@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cadvizortestlibrary/Auth/auth.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:delayed_display/delayed_display.dart';
 
 void main() {

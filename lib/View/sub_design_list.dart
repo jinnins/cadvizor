@@ -1,9 +1,7 @@
 import 'dart:convert';
-import 'dart:typed_data';
 import 'package:cadvizortestlibrary/View/pdfviewer.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 import '../Model/Binary_model.dart';
 

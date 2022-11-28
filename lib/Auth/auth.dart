@@ -1,5 +1,4 @@
-import 'package:amplify_core/amplify_core.dart';
-import 'package:amplify_flutter/amplify_flutter.dart';
+
 import 'package:cadvizortestlibrary/Model/Auth.dart';
 import 'package:cadvizortestlibrary/View/platform.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +7,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:animated_snack_bar/animated_snack_bar.dart';
 //import '../amplifyconfiguration.dart';
-import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
 
 class AuthhomeWidget extends StatefulWidget {
   const AuthhomeWidget({Key? key}) : super(key: key);
@@ -19,7 +17,6 @@ class AuthhomeWidget extends StatefulWidget {
 
 class _AuthhomeWidgetState extends State<AuthhomeWidget> {
 
-  final _amplify = Amplify;
   late TextEditingController emailAddressController;
   late TextEditingController passwordController;
   late bool passwordVisibility;
@@ -38,7 +35,6 @@ class _AuthhomeWidgetState extends State<AuthhomeWidget> {
   @override
   void initState() {
     super.initState();
-  //  _configureAmplify();
     emailAddressController = TextEditingController();
     passwordController = TextEditingController();
     passwordVisibility = false;
@@ -48,22 +44,7 @@ class _AuthhomeWidgetState extends State<AuthhomeWidget> {
     passwordLoginController = TextEditingController();
     passwordLoginVisibility = false;
   }
-/*
-  void _configureAmplify() async{
-    AmplifyAuthCognito authPlugin = AmplifyAuthCognito();
 
-    _amplify.addPlugins([
-      authPlugin,
-    ]);
-
-    try {
-      await _amplify.configure(amplifyconfig);
-      print('Successfully configured Amplify 🎉');
-    } catch (e) {
-      print('Could not configure Amplify ☠️');
-    }
-  }
-*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(

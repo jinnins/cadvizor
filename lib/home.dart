@@ -1,4 +1,3 @@
-import 'package:cadvizortestlibrary/Model/Auth.dart';
 import 'package:cadvizortestlibrary/View/connector.dart';
 import 'package:cadvizortestlibrary/View/terminal.dart';
 import 'package:cadvizortestlibrary/View/wire.dart';

@@ -1,13 +1,16 @@
 import 'dart:convert';
+import 'dart:core';
+import 'dart:core';
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:cadvizortestlibrary/View/sub_design_list.dart';
 import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:pdf_render/pdf_render.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:http/http.dart' as http;
+import 'dart:math' as math;
+import 'dart:core';
 
 import '../Model/Binary_model.dart';
 
@@ -22,6 +25,7 @@ class PdfViewer extends StatefulWidget {
 }
 
 class _PdfViewerState extends State<PdfViewer> {
+
   late PdfViewerController _pdfViewerController;
 
   @override
