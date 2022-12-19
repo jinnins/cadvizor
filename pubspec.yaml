@@ -55,10 +55,6 @@ dependencies:
   provider: ^6.0.3
   data_table_2: ^2.3.6
   animated_snack_bar: ^0.2.2
-  amplify_flutter: <1.0.0
-  amplify_core: <1.0.0
-  amplify_analytics_pinpoint: <1.0.0
-  amplify_auth_cognito: <1.0.0
   animations: ^2.0.4
   animated_styled_widget: ^0.4.6
   delayed_display: ^2.0.0

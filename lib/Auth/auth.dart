@@ -6,7 +6,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:animated_snack_bar/animated_snack_bar.dart';
-//import '../amplifyconfiguration.dart';
 
 class AuthhomeWidget extends StatefulWidget {
   const AuthhomeWidget({Key? key}) : super(key: key);

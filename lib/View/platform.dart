@@ -544,7 +544,7 @@ Route _createQRcodeScannerRoute() {
 Route _createChattingRoute() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) =>
-        WebSocketTest(channel: IOWebSocketChannel.connect(Uri.parse('wss://echo.websocket.events'),), key: null,),
+        WebSocketTest(channel: IOWebSocketChannel.connect(Uri.parse('wss://ws.ifelse.io/'),), key: null,),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       var begin = Offset(1.0, 1.0);
       var end = Offset.zero;
