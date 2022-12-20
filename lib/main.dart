@@ -163,7 +163,7 @@ class _SplashWidgetState extends State<SplashWidget>
                                                             Color(0xFF30AC9D),
                                                         elevation: 3,
                                                         textStyle: TextStyle(
-                                                            fontSize: 19,
+                                                            fontSize: 18,
                                                             fontWeight:
                                                                 FontWeight
                                                                     .normal,
