@@ -38,7 +38,7 @@ jobs:
       - run: flutter pub get
       - run: flutter clean
       - run: flutter build ios --release --no-codesign
-      
+
       
   build_appbundle:
     name: Build Flutter (Android)
@@ -58,7 +58,6 @@ jobs:
       - run: flutter pub get
       - run: flutter clean
       - run: flutter build appbundle --release
-      
       #CD
   deploy_android:
     name: Deploying to playstore
