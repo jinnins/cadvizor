@@ -23,7 +23,13 @@ platform :android do
         task: "bundle",
         build_type: 'Release'
       )
-      upload_to_play_store
+      upload_to_play_store(
+          track: "production",
+          skip_upload_metadata: true,
+          skip_upload_images: true,
+          skip_upload_screenshots: true,
+          skip_upload_apk:true
+      )
     end
   end
   desc "Deploy a new version to the Google Play"
