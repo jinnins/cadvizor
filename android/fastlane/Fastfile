@@ -24,13 +24,14 @@ platform :android do
         build_type: 'Release'
       )
       upload_to_play_store(
-          track: "beta"
+        track: 'beta',
+        aab: '../build/app/outputs/bundle/release/app-release.aab',
+        skip_upload_metadata: true,
+        skip_upload_images: true,
+        skip_upload_screenshots: true,
+        release_status: "draft",
+        version_code: flutter_version()["version_code"],
       )
     end
-  end
-  desc "Deploy a new version to the Google Play"
-  lane :deploy do
-    gradle(task: "clean assembleRelease")
-    upload_to_play_store
   end
 end
