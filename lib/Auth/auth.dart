@@ -251,9 +251,12 @@ class _AuthhomeWidgetState extends State<AuthhomeWidget> {
                                               0, 24, 0, 0),
                                           child: ElevatedButton(
                                             onPressed: () async {
+
                                               final user =
                                               await GetAuthByRestAPI(
                                                   userID, userPassword);
+                                              Navigator.of(context).push(
+                                                  _createPlatformRoute(user));
                                               if (user == "") {
                                                 AnimatedSnackBar.material(
                                                   'Please check your id or password',

@@ -92,7 +92,7 @@ class _SplashWidgetState extends State<SplashWidget>
                                         DelayedDisplay(
                                           delay : initialDelay,
                                           child: Text(
-                                            'Make Your\nManufacturing\nDesign Easy',
+                                            'Make Your\nManufacturing\nDesign Easy!',
                                             style: GoogleFonts.getFont(
                                               'Quicksand',
                                               textStyle: TextStyle(
