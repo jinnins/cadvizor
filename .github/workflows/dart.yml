@@ -2,10 +2,10 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - main2
   pull_request:
     branches:
-      - main
+      - main2
       
 jobs:
   flutter_test:
